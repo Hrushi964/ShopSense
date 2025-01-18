@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results - ShopSense</title>
+    <link rel="stylesheet" href="D:\ShopSense\static\styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="logo.png" alt="Logo" class="logo"> <!-- Circular logo -->
+            <span class="logo-text">ShopSense</span>
+        </div>
+        <div class="nav-links">
+            <a href="#">About us</a>
+            <a href="#">Deals</a>
+            <a href="#">Notifications</a>
+            <a href="#">Contact Us</a>
+        </div>
+    </nav>
+
+    <main>
+        <h1>Search Results for "<span>{{ query }}</span>"</h1>
+        <div class="product-container">
+            {% for result in results %}
+            <div class="product-card">
+                <h3>{{ result.title }}</h3>
+                <p class="price">{{ result.price }}</p>
+                <p class="platform">{{ result.platform }}</p>
+                <a href="{{ result.url }}" class="view-link" target="_blank">View &gt;</a>
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 ShopSense. All rights reserved.</p>
+    </footer>
+</body>
+</html>
