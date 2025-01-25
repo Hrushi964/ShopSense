@@ -10,7 +10,7 @@ tool = TavilySearchResults(api_wrapper=api_wrapper)
 
 @app.route('/')
 def index():
-    return render_template('D:/ShopSense/templates/index.html')
+    return render_template('index.html')
 
 @app.route('/search', methods=['POST'])
 def search():
@@ -20,7 +20,7 @@ def search():
     """)
     
     # Pass the results to the search results page
-    return render_template('D:/ShopSense/templates/searchresults.html', results=results, query=product_name)
+    return render_template('/searchresults.html', results=results, query=product_name)
 
 # Add any other existing routes here
 
